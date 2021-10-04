@@ -1,0 +1,9 @@
+POST https://kahftekno.com/rest-emonikv2/index.php/apilogin/check_login
+emonik-api-key: restapiemonik
+# Content-Type: multipart/form-data
+Content-Type: application/x-www-form-urlencoded
+
+{
+    "username": "admin",
+    "password": "123123123"
+}
