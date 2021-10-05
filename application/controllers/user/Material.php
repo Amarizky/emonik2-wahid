@@ -49,20 +49,20 @@ class Material extends CI_Controller
 
 		// $data['datatable'] = $this->crud->get('users', '*')->result();
 
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, 'https://kahftekno.com/rest-emonikv2/index.php/apiproduk');
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'emonik-api-key: restapiemonik'
-		));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		// $ch = curl_init();
+		// curl_setopt($ch, CURLOPT_URL, 'https://kahftekno.com/rest-emonikv2/index.php/apiproduk');
+		// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		// 	'emonik-api-key: restapiemonik'
+		// ));
+		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-		$data['dproduk'] = json_decode(curl_exec($ch))->data;
+		// $data['dproduk'] = json_decode(curl_exec($ch))->data;
 
-		curl_close($ch);
+		// curl_close($ch);
 
-		foreach ($data['dproduk'] as $m) {
-			$data['produks'][] = $m->nama_produk;
-		}
+		// foreach ($data['dproduk'] as $m) {
+		// 	$data['produks'][] = $m->nama_produk;
+		// }
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, 'https://kahftekno.com/rest-emonikv2/index.php/apimastermitra');
@@ -117,7 +117,7 @@ class Material extends CI_Controller
 
 		// $data['row'] = $this->crud->get_where('users', '*', ['id' => $id])->row();
 
-		
+
 
 		// request data ke api
 		$ch = curl_init();
@@ -246,7 +246,7 @@ class Material extends CI_Controller
 			'kode_produk' => $input['kode_produk'],
 			'kode_material' => $input['kode_material'],
 			'satuan' => $input['satuan'],
-			'qty' => ($input['tonkg'] == 'kg' ? $input['qty'] : ($input['qty'] / 1000)),
+			'qty' => ($input['satuan'] == 'kg' ? $input['qty'] : ($input['qty'] / 1000)),
 		];
 
 		// cek kode_produk udah ada belon 
@@ -294,7 +294,7 @@ class Material extends CI_Controller
 			$response = array(
 				'status' => 1,
 				'message' => 'Data baru berhasil disimpan',
-				'return_url' => $input['submit'] == 'submit' ? site_url(current_role() . '/' . $this->menu_alias . '/index/Add') : site_url(current_role() . '/' . $this->menu_alias),
+				'return_url' => site_url(current_role() . '/' . $this->menu_alias),
 				'csrf' => $csrf
 			);
 		} else {

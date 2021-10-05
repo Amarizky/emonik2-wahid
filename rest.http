@@ -7,3 +7,41 @@ Content-Type: application/x-www-form-urlencoded
     "username": "admin",
     "password": "123123123"
 }
+
+###
+
+GET https://kahftekno.com/rest-emonikv2/index.php/apiakun
+emonik-api-key: restapiemonik
+
+###
+
+PUT https://kahftekno.com/rest-emonikv2/index.php/apiconfirmpo
+emonik-api-key: restapiemonik
+
+{
+    "no_po": "0109",
+    "tanggal_pengiriman": "2021-08-05"
+}
+
+###
+
+GET https://kahftekno.com/rest-emonikv2/index.php/apiconfirmpo
+emonik-api-key: restapiemonik
+
+
+###
+GET https://kahftekno.com/rest-emonikv2/index.php/apiproduksi
+emonik-api-key: restapiemonik
+
+###
+
+POST https://kahftekno.com/rest-emonikv2/index.php/apiproduksi
+emonik-api-key: restapiemonik
+
+{
+    "kode_mitra": "user2",
+    "kode_produk": "PRODUK2",
+    "qty": "1234",
+    "waktu_produksi": "2021-09-15",
+    "no_po": null
+}

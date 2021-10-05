@@ -52,8 +52,7 @@
                                 <th>Produk</th>
                                 <th>Material</th>
                                 <th>Satuan</th>
-            
-                                <th>Quantity (ton)</th>
+                                <th>Quantity</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>

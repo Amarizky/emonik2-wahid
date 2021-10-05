@@ -19,14 +19,9 @@ $roles = get_data('roles', '*')->result();
 
             <div class="form-group">
                 <label class="font-weight-semibold">Produk</label>
-                <!-- <input list="mitras" class="form-control" id="mitra" name="mitra" placeholder="Masukkan nama mitra" value="<?php echo @$row->kode_produk; ?>" required> -->
-                <select name="kode_produk" id="kode_produk" class="form-control" required>
-                    <option value="" disabled selected>Pilih produk</option>
-                    <?php foreach ($dproduk as $m) : ?>
-                        <option value="<?= $m->nama_produk; ?>" <?= (@$row->produk == $m->nama_produk ? "selected" : ""); ?>><?= $m->nama_produk; ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <input class="form-control" id="kode_produk" name="kode_produk" placeholder="Masukkan kode produk" value="<?php echo @$row->kode_produk; ?>" required>
             </div>
+
             <div class="form-group">
                 <label class="font-weight-semibold">Material</label>
                 <!-- <input list="mitras" class="form-control" id="mitra" name="mitra" placeholder="Masukkan nama mitra" value="<?php echo @$row->kode_material; ?>" required> -->
@@ -45,7 +40,6 @@ $roles = get_data('roles', '*')->result();
             <div class="form-group">
                 <label class="font-weight-semibold">Satuan</label>
                 <select class="form-control" id="satuan" name="satuan" placeholder="Masukkan satuan" value="<?php echo @$row->satuan; ?>" required>
-
                     <option>kg</option>
                     <option>ton</option>
                 </select>
@@ -57,3 +51,6 @@ $roles = get_data('roles', '*')->result();
                 <button type="submit" id="submit" value="submit" class="btn bg-transparent text-blue border-blue ml-2 btn-submit" onclick="(function(){$('#submit-type').val('submit');return true;})();return true;">Submit<i class="icon-paperplane ml-2"></i></button>
                 <button type="submit" id="submit-back" value="submit-back" class="btn bg-transparent text-blue border-blue ml-2 btn-submit-back" onclick="(function(){$('#submit-type').val('submit-back');return true;})();return true;">Submit & Back<i class="icon-paperplane ml-2"></i></button>
             </div>
+        </div>
+    </div>
+</form>
