@@ -9,12 +9,7 @@ $roles = get_data('roles', '*')->result();
             <div class="form-group">
                 <label class="font-weight-semibold">Mitra</label>
                 <!-- <input list="mitras" class="form-control" id="mitra" name="mitra" placeholder="Masukkan nama mitra" value="<?php echo @$row->kode_mitra; ?>" required> -->
-                <select name="kode_mitra" id="kode_mitra" class="form-control" required>
-                    <option value="" disabled selected>Pilih mitra</option>
-                    <?php foreach ($datamitra as $mi) : ?>
-                        <option value="<?= $mi->nama_mitra; ?>" <?= (@$row->mitra == $mi->nama_mitra ? "selected" : ""); ?>><?= $mi->nama_mitra; ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <input class="form-control" type="text" name="kode_mitra" id="kode_mitra" value="<?= @$row->kode_mitra ?? current_ses('username'); ?>" <?= empty($row->kode_mitra) ? 'readonly' : ''; ?>>
             </div>
 
             <div class="form-group">

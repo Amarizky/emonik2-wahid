@@ -245,8 +245,8 @@ class Material extends CI_Controller
 			'kode_mitra' => $input['kode_mitra'],
 			'kode_produk' => $input['kode_produk'],
 			'kode_material' => $input['kode_material'],
-			'satuan' => $input['satuan'],
-			'qty' => ($input['satuan'] == 'kg' ? $input['qty'] : ($input['qty'] / 1000)),
+			'satuan' => 'ton',
+			'qty' => ($input['satuan'] == 'ton' ? $input['qty'] : ($input['qty'] / 1000)),
 		];
 
 		// cek kode_produk udah ada belon 
