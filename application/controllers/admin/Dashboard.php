@@ -81,4 +81,17 @@ class Dashboard extends CI_Controller
 		// $data['total_emp'] = $this->crud->get_where('employees', 'employeeid', ['company_code' => current_ses('company_code')])->num_rows();
 		$this->panel_layout->load('layout/panel/v_layout', 'pages/admin/v_dash', $data);
 	}
+
+	public function checkPO()
+	{
+		$po = $this->input->post('pos');
+
+		$response = [
+			'csrfName' => $this->security->get_csrf_token_name(),
+			'csrfHash' => $this->security->get_csrf_hash(),
+			'result' => ($po === getPOs())
+		];
+
+		echo json_encode($response);
+	}
 }
